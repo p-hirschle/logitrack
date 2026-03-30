@@ -1,6 +1,5 @@
 package com.logitrack.backend.controller;
 
-import com.logitrack.backend.dto.MaintenanceDTO;
 import com.logitrack.backend.entity.Maintenance;
 import com.logitrack.backend.repository.MaintenanceRepository;
 import org.springframework.web.bind.annotation.*;
@@ -20,15 +19,8 @@ public class MaintenanceController {
 
     // GET (all)
     @GetMapping
-    public List<MaintenanceDTO> getAll() {
-        return repository.findAll().stream().map(m -> {
-            MaintenanceDTO dto = new MaintenanceDTO();
-            dto.id = m.getId();
-            dto.tipoServico = m.getTipoServico();
-            dto.custoEstimado = m.getCustoEstimado();
-            dto.status = m.getStatus();
-            return dto;
-        }).toList();
+    public List<Maintenance> getAll() {
+        return repository.findAll();
     }
 
     // GET por id

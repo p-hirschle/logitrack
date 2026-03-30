@@ -115,6 +115,14 @@ export default function Dashboard() {
                 </span>
               </div>
             ))}
+
+            {/* TOTAL DO RANKING */}
+            <div className="pt-4 mt-2 border-t border-slate-100 flex justify-between items-center px-3">
+              <span className="text-slate-500 font-medium">Total:</span>
+              <span className="text-lg font-bold text-blue-600">
+                {data.ranking.reduce((acc, [, km]) => acc + km, 0).toLocaleString()} km
+              </span>
+            </div>
           </div>
         </div>
 
