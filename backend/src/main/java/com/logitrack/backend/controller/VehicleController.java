@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/vehicles")
 public class VehicleController {
@@ -16,7 +17,7 @@ public class VehicleController {
         this.repository = repository;
     }
 
-    // GET - listar todos
+    // GET (all)
     @GetMapping
     public List<Vehicle> getAll() {
         return repository.findAll();
