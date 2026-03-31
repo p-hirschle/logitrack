@@ -5,9 +5,24 @@ import Dashboard from "./pages/Dashboard";
 import Trips from "./pages/Trips";
 import Maintenances from "./pages/Maintenances";
 import Vehicles from "./pages/Vehicles";
+import Login from "./pages/Login";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 
-function App() {
+function MainLayout() {
   const [currentPage, setCurrentPage] = useState("dashboard");
+  const { isAuthenticated, isLoading } = useAuth();
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+        <div className="w-10 h-10 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return <Login />;
+  }
 
   return (
     <div className="flex min-h-screen bg-slate-50">
@@ -23,6 +38,14 @@ function App() {
         </main>
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <MainLayout />
+    </AuthProvider>
   );
 }
 

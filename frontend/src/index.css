@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes vortex {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.vortex-bg {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle at center, #bfebff 0%, transparent 100%);
+  filter: blur(110px);
+  opacity: 0.7;
+  animation: vortex 20s linear infinite;
+}
