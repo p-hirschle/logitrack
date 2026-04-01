@@ -109,4 +109,4 @@ Essa separação garante maior organização, escalabilidade e facilidade de man
 - `README.md`: Documentação principal do projeto (você está aqui!).
 
 ---
-© 2026 LogiTrack Pro - Desenvolvido por Pedro Hirschle.
+*© 2026 LogiTrack Pro — Desenvolvido por Pedro Hirschle, última atualização em 31/03/2026*
