@@ -78,6 +78,7 @@ A credencial padrão configurada para o MVP é:
 - **Senha**: `logitrack`
 
 **NOTA:** O backend está hospedado no Render, que possui *cold start*, o que pode fazer com que a primeira requisição (primeiro login) demore um pouco.
+
 ---
 
 ## Como Rodar o Projeto Localmente
