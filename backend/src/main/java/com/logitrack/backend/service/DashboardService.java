@@ -20,14 +20,14 @@ public class DashboardService {
 
         DashboardDTO dto = new DashboardDTO();
 
-        // Total KM
+        // total KM
         BigDecimal totalKm = (BigDecimal) em.createNativeQuery(
                 "SELECT COALESCE(SUM(km_percorrida),0) FROM viagens"
         ).getSingleResult();
 
         dto.setTotalKm(totalKm);
 
-        // Volume por categoria
+        // volume por categoria
         List<Object[]> volume = em.createNativeQuery("""
             SELECT v.tipo, COUNT(*)
             FROM viagens vi
@@ -37,7 +37,7 @@ public class DashboardService {
 
         dto.setVolumePorCategoria(volume);
 
-        // Próximas manutenções
+        // próximas manutenções
         List<Object[]> manutencoes = em.createNativeQuery("""
             SELECT m.id, m.data_inicio, m.tipo_servico, m.status
             FROM manutencoes m
@@ -48,7 +48,7 @@ public class DashboardService {
 
         dto.setProximasManutencoes(manutencoes);
 
-        // Ranking de utilização
+        // ranking de utilização
         List<Object[]> ranking = em.createNativeQuery("""
             SELECT v.modelo, SUM(vi.km_percorrida) as total
             FROM viagens vi
@@ -60,7 +60,7 @@ public class DashboardService {
 
         dto.setRanking(ranking);
 
-        // Projeção financeira
+        // projeção financeira
         BigDecimal projecao = (BigDecimal) em.createNativeQuery("""
             SELECT COALESCE(SUM(custo_estimado),0)
             FROM manutencoes

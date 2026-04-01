@@ -39,12 +39,6 @@ export default function Maintenances() {
 
   const fetchMaintenances = () => {
     api.get("/maintenances").then((res) => {
-        // The current maintenance controller returns a DTO in some cases, 
-        // let's check if we get the full maintenance or just DTO.
-        // Actually, let's fetch individual for edit or ensure the backend returns enough.
-        // Looking at MaintenanceController.java:getAll(), it returns MaintenanceDTO.
-        // I might need to update that to return full entity or adjust the frontend.
-        // Let's assume it returns what we need for the table.
         setMaintenances(res.data);
     });
   };
