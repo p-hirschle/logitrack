@@ -69,9 +69,10 @@ Essa separação garante maior organização, escalabilidade e facilidade de man
 
 Acesse o link: https://pro-logitrack.vercel.app e realize login com as credenciais abaixo.
 
-## Credenciais
+### Credenciais
 
-Para simular a segurança dos dados, o sistema possui uma tela de login básica. A credencial padrão configurada para o MVP é:
+Para simular a segurança dos dados, o sistema possui uma tela de login básica.  
+A credencial padrão configurada para o MVP é:
 
 - **Usuário**: `admin`
 - **Senha**: `logitrack`
@@ -116,7 +117,8 @@ Para simular a segurança dos dados, o sistema possui uma tela de login básica.
 
 ## Acesso ao Sistema
 
-Para simular a segurança dos dados, o sistema possui uma tela de login básica. A credencial padrão configurada para o MVP é:
+Para simular a segurança dos dados, o sistema possui uma tela de login básica.  
+A credencial padrão configurada para o MVP é:
 
 - **Usuário**: `admin`
 - **Senha**: `logitrack`
