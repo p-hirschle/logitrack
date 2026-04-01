@@ -28,9 +28,9 @@ public class AuthController {
         String username = credentials.get("username");
         String password = credentials.get("password");
 
-        log.info("Tentativa de login:");
-        log.info("Username: '{}'", username);
-        log.info("Password Length: {}", (password != null ? password.length() : "null"));
+        log.debug("Tentativa de login:");
+        log.debug("Username: '{}'", username);
+        log.debug("Password Length: {}", (password != null ? password.length() : "null"));
 
         try {
             // tentativa de autenticação
@@ -38,7 +38,7 @@ public class AuthController {
                     new UsernamePasswordAuthenticationToken(username, password)
             );
 
-            log.info("Autenticação feita com sucesso para: '{}'", username);
+            log.debug("Autenticação feita com sucesso para: '{}'", username);
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
             String token = jwtService.generateToken(userDetails);
 
