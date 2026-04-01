@@ -107,6 +107,20 @@ A credencial padrão configurada para o MVP é:
    ```bash
    npm install
    ```
+2.1 Altere a baseURL da API no código-fonte:
+   Procure por:
+   ```
+   export const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL, //"http://localhost:8080",
+   });
+   ```
+   e troque por:
+   ```
+   export const api = axios.create({
+   baseURL: "http://localhost:8080", //import.meta.env.VITE_API_URL,
+   });
+   ```
+
 3. Inicie o servidor de desenvolvimento:
    ```bash
    npm run dev
