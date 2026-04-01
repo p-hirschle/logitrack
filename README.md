@@ -24,6 +24,60 @@ O projeto foi construído utilizando uma arquitetura moderna e escalável, divid
 
 ---
 
+## Decisões Técnicas
+
+### Módulos Implementados
+- **Gestão de Viagens (CRUD)**: Módulo completo para registro de rotas, quilometragem e veículos.
+- **Módulo de Manutenção (CRUD)**: Controle de status, custos e tipos de serviço.
+- **Dashboard de Análise**: Exibição das 5 métricas obrigatórias extraídas via SQL para garantir performance e precisão.
+
+### Banco de Dados
+Utilizei o banco **H2 (em memória)** para este MVP, garantindo que o projeto rode de forma simples sem necessidade de configuração de servidores externos.
+
+### Segurança
+
+A aplicação utiliza autenticação baseada em JWT (JSON Web Token), garantindo:
+
+- Sessões stateless
+- Proteção de rotas da API
+- Separação entre autenticação e autorização
+
+Apenas usuários autenticados podem acessar os endpoints protegidos.
+
+### Arquitetura
+
+O backend segue o padrão em camadas:
+
+- Controller: Responsável pela exposição dos endpoints REST
+- Service: Contém a lógica de negócio
+- Repository: Acesso aos dados via Spring Data JPA
+- DTOs: Utilizados para transferência de dados e desacoplamento da camada de persistência
+
+Essa separação garante maior organização, escalabilidade e facilidade de manutenção.
+
+---
+
+## Estrutura de Pastas
+
+- `/backend`: API RESTful em Spring Boot.
+- `/frontend`: Aplicação Single Page Application (SPA) em React.
+- `README.md`: Documentação principal do projeto (você está aqui!).
+
+---
+
+## Acessar o Projeto em Produção
+
+Acesse o link: https://pro-logitrack.vercel.app e realize login com as credenciais abaixo.
+
+## Credenciais
+
+Para simular a segurança dos dados, o sistema possui uma tela de login básica. A credencial padrão configurada para o MVP é:
+
+- **Usuário**: `admin`
+- **Senha**: `logitrack`
+
+---
+
 ## Como Rodar o Projeto Localmente
 
 ### **>>> Pré-requisitos <<<**
@@ -69,44 +123,4 @@ Para simular a segurança dos dados, o sistema possui uma tela de login básica.
 
 ---
 
-## Decisões Técnicas
-
-### Módulos Implementados
-- **Gestão de Viagens (CRUD)**: Módulo completo para registro de rotas, quilometragem e veículos.
-- **Módulo de Manutenção (CRUD)**: Controle de status, custos e tipos de serviço.
-- **Dashboard de Análise**: Exibição das 5 métricas obrigatórias extraídas via SQL para garantir performance e precisão.
-
-### Banco de Dados
-Utilizei o banco **H2 (em memória)** para este MVP, garantindo que o projeto rode de forma simples sem necessidade de configuração de servidores externos.
-
-### Segurança
-
-A aplicação utiliza autenticação baseada em JWT (JSON Web Token), garantindo:
-
-- Sessões stateless
-- Proteção de rotas da API
-- Separação entre autenticação e autorização
-
-Apenas usuários autenticados podem acessar os endpoints protegidos.
-
-### Arquitetura
-
-O backend segue o padrão em camadas:
-
-- Controller: Responsável pela exposição dos endpoints REST
-- Service: Contém a lógica de negócio
-- Repository: Acesso aos dados via Spring Data JPA
-- DTOs: Utilizados para transferência de dados e desacoplamento da camada de persistência
-
-Essa separação garante maior organização, escalabilidade e facilidade de manutenção.
-
----
-
-## Estrutura de Pastas
-
-- `/backend`: API RESTful em Spring Boot.
-- `/frontend`: Aplicação Single Page Application (SPA) em React.
-- `README.md`: Documentação principal do projeto (você está aqui!).
-
----
 *© 2026 LogiTrack Pro — Desenvolvido por Pedro Hirschle, última atualização em 31/03/2026*
