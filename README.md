@@ -107,6 +107,7 @@ A credencial padrão configurada para o MVP é:
    ```bash
    npm install
    ```
+
 2.1 Altere a baseURL da API no código-fonte:
    Procure por:
    ```
